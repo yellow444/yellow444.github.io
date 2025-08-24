@@ -101,7 +101,7 @@ body.no-scroll-nav { overflow: hidden; }
 /* Меню */
 .main-nav ul {
   list-style: none;
-  display: none;
+  display: block;
   gap: 0.4rem;
 }
 .main-nav a {
