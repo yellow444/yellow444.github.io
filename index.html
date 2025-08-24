@@ -373,7 +373,7 @@
     <script>
       (async function injectMenu() {
         try {
-          const resp = await fetch('menu.html', { cache: 'no-cache' });
+          const resp = await fetch('./partial/menu.html', { cache: 'no-cache' });
           if (!resp.ok) return;
           const html = await resp.text();
           const container = document.getElementById('menu-placeholder');
