@@ -745,30 +745,28 @@ body {
     display: none;
   }
 }
-
 /* ===== СЕРТИФИКАТЫ ===== */
 .certificates {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
 }
-
 .certificates img {
-  width: 200px;
-  height: auto;
+width: 200px;
+height: auto;
+min-width: 0;
 }
-
 /* ===== ХАКАТОНЫ ===== */
 .hack-block {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+display: flex;
+flex-wrap: wrap;
+gap: 1rem;
+justify-content: center;
 }
-
 .hack-block img {
-  width: 200px;
-  height: auto;
-  cursor: pointer;
+width: 200px;
+height: auto;
+cursor: pointer;
+min-width: 0;
 }
