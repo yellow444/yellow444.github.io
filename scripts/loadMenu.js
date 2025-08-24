@@ -4,7 +4,7 @@
 
 (async () => {
   const PLACEHOLDER_ID = 'menu-placeholder';
-  const MENU_URL = './menu.html'; // относительный путь — важен для GitHub Pages
+  const MENU_URL = './partials/menu.html'; // относительный путь — важен для GitHub Pages
 
   const host = document.getElementById(PLACEHOLDER_ID);
   if (!host) {
