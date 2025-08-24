@@ -67,7 +67,7 @@
     host.innerHTML = `
       <nav id="mainNav" class="main-nav" role="navigation" aria-label="Главная навигация">
         <ul>
-          <li><a href="/#about">Обо мне</a></li>
+      
           <li><a href="/#skills">Навыки</a></li>
           <li><a href="/#experience">Опыт</a></li>
           <li><a href="/#projects">Проекты</a></li>

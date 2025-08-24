@@ -364,14 +364,14 @@ section#about p { margin-bottom: 1rem; font-size: 1rem; }
 
   .main-nav {
     position: fixed;
-    inset: 64px 0 auto 0;
+    inset: 32px 0 auto 0;
     background: var(--header);
-    padding: .75rem 1rem 1rem;
+    padding: .65rem 0.9rem 0.9rem;
     z-index: 1500;
   }
-  .main-nav ul { flex-direction: column; gap: .25rem; }
+  .main-nav ul { flex-direction: column; gap: .05rem; }
   .main-nav a {
-    display: block; padding: .9rem 1rem; border-radius: .6rem; font-size: 1.05rem;
+    display: block; padding: .7rem 0.9rem; border-radius: .6rem; font-size: .95rem;
   }
 
   /* Контакты: компактнее на узких экранах */
