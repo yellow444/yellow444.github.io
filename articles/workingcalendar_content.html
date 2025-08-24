@@ -1,0 +1,156 @@
+<main class="container">
+  <h1>Генерация рабочей календарной таблицы с помощью WorkingCalendar</h1>
+
+  <h2>Зачем нужен производственный календарь</h2>
+  <p>
+    В повседневной работе многих компаний важно учитывать рабочие и выходные дни
+    — от расчёта зарплат до планирования маркетинговых акций. В типичных
+    корпоративных приложениях часто требуется высчитывать количество рабочих
+    дней между датами, учитывать короткие недели и переносы праздников. Удобно
+    хранить такую информацию в отдельной таблице базы данных.
+  </p>
+  <p>
+    Репозиторий <strong>WorkingCalendar</strong> предлагает готовое решение для
+    <strong>PostgreSQL</strong>, <strong>MySQL</strong> и
+    <strong>MS SQL Server</strong>, а на сайте
+    <strong>workingcalendar.ru</strong> можно сгенерировать SQL-скрипт буквально
+    в пару кликов. В таблице <code>WorkingCalendar</code> хранятся даты и флаг,
+    показывающий, рабочий ли это день. Такая таблица пригодится для планирования
+    отпусков, расчёта зарплаты, маркетинга или распределения ресурсов — многие
+    бизнес-процессы зависят от календаря праздников и выходных.
+  </p>
+
+  <h2>Источники данных и структура проекта</h2>
+  <p>
+    Проект использует официальный XML-календарь из репозитория
+    <code>xmlcalendar/data</code>. Данные за 2013–2023 годы находятся в папке
+    <code>WorkingCalendar.Server/Data</code> и копируются из
+    upstream-репозитория. Когда выходят данные за новые годы, их можно обновить
+    обычной заменой соответствующих папок (страны: <code>ru</code>,
+    <code>kz</code>, <code>by</code>, <code>ua</code>, <code>uz</code> и т.д.).
+    Источник данных — <strong>xmlcalendar.ru</strong>, соблюдайте их лицензию.
+  </p>
+  <ul>
+    <li>
+      <strong>WorkingCalendar.Domain</strong> — доменная модель и логика
+      определения рабочих/выходных дней. Класс <code>Calendar</code> парсит XML,
+      определяет тип дня (рабочий/выходной/праздник) и генерирует SQL.
+    </li>
+    <li>
+      <strong>WorkingCalendar.Application</strong> — сервисы приложения.
+      <code>CalendarService</code> содержит метод <code>GetYearSqlAsync</code>,
+      который создаёт SQL-скрипт для указанного года, типа СУБД и числа рабочих
+      дней в неделе. Если передать <code>year=all</code>, сервис склеит скрипты
+      за все доступные годы.
+    </li>
+    <li>
+      <strong>WorkingCalendar.Server</strong> — API на ASP.NET Core. Контроллер
+      <code>WorkingCalendarController</code> предоставляет метод
+      <code>GetYearWorkingCalendar</code>, принимающий год, тип БД
+      (<code>mssql</code>/<code>mysql</code>/<code>postgresql</code>) и
+      количество рабочих дней; возвращает готовый SQL-текст.
+    </li>
+    <li>
+      <strong>workingcalendar.client</strong> — фронтенд (React). Сайт
+      <strong>workingcalendar.ru</strong> даёт выбрать год, тип БД, рабочую
+      неделю (5 или 6 дней) и получить скрипт. Есть переключение темы/языка и
+      просмотр календаря. Для запуска — порт 8080 (Docker/Helm).
+    </li>
+  </ul>
+
+  <h2>Как формируется SQL-скрипт</h2>
+  <p>
+    Ключевая особенность — генерация SQL “на лету”. Метод
+    <code>Calendar.GenerateSql</code> принимает год, тип БД и число рабочих
+    дней, формируя <code>CREATE TABLE</code> и большой <code>INSERT</code> по
+    всем датам года.
+  </p>
+  <pre><code class="language-csharp">switch (type)
+{
+  case "mssql":
+    builder.Append("CREATE TABLE WorkingCalendar (id bigint IDENTITY NOT NULL, DateDay date NOT NULL, IsWorkingDay bit NOT NULL);");
+    break;
+  case "mysql":
+    builder.Append("CREATE TABLE WorkingCalendar ( id INTEGER PRIMARY KEY AUTO_INCREMENT, DateDay DATE NOT NULL, IsWorkingDay BIT NOT NULL);");
+    break;
+  case "postgresql":
+    builder.Append("CREATE TABLE WorkingCalendar (id SERIAL PRIMARY KEY, DateDay date NOT NULL, IsWorkingDay bit NOT NULL);");
+    break;
+}
+</code></pre>
+  <p>
+    Далее перебираются все даты года, определяется тип дня и формируется единый
+    <code>INSERT INTO WorkingCalendar (DateDay, IsWorkingDay) VALUES ...</code>.
+    Для PostgreSQL флаг рабочего дня оборачивается в кавычки
+    (<code>'1'</code>/<code>'0'</code>), для остальных — без кавычек.
+  </p>
+  <p>Пример для PostgreSQL (2025):</p>
+  <pre><code class="language-sql">CREATE TABLE WorkingCalendar (
+  id SERIAL PRIMARY KEY,
+  DateDay date NOT NULL,
+  IsWorkingDay bit NOT NULL
+);
+INSERT INTO WorkingCalendar (DateDay, IsWorkingDay) VALUES
+  ('2025-01-01', '0'),
+  ('2025-01-02', '0'),
+  ('2025-01-03', '0'),
+  -- ...
+  ('2025-12-31', '1');
+</code></pre>
+  <p>
+    При выборе 6-дневной недели логика вычисления меняется, но формат результата
+    остаётся прежним. Скрипт подходит как для первичного создания таблицы, так и
+    для обновления данных в существующей базе.
+  </p>
+
+  <h2>Использование API и веб-сайта</h2>
+  <p>Получить скрипт можно через API:</p>
+  <pre><code class="language-http">GET /WorkingCalendar/GetYearWorkingCalendar?year={год|all}&amp;type={mssql|mysql|postgresql}&amp;days={5|6}
+</code></pre>
+  <ul>
+    <li>
+      <code>year</code> — конкретный год или <code>all</code> для всех доступных
+      лет;
+    </li>
+    <li>
+      <code>type</code> — <code>mssql</code>, <code>mysql</code> или
+      <code>postgresql</code>;
+    </li>
+    <li>
+      <code>days</code> — рабочие дни в неделе: <code>5</code> или
+      <code>6</code>.
+    </li>
+  </ul>
+  <p>
+    Сайт <strong>workingcalendar.ru</strong> работает аналогично: выбираете
+    параметры — получаете готовый SQL в текстовой области для копирования.
+  </p>
+
+  <h2>Развёртывание и обновление</h2>
+  <p>
+    Для Kubernetes предусмотрен Helm-чарт: post-install hook создаёт PostgreSQL
+    и запускает Job с SQL из ConfigMap. Для проверки миграций можно использовать
+    вспомогательные скрипты (временная БД + применение изменений). В Docker
+    укажите переменные окружения, например
+    <code>ASPNETCORE_URLS=http://localhost:8080</code> или
+    <code>ASPNETCORE_HTTP_PORT=8080</code>.
+  </p>
+  <p>
+    Обновление данных: скачайте свежие XML из <strong>XMLCalendar</strong>,
+    замените соответствующие папки в <code>WorkingCalendar.Server/Data</code> и
+    перегенерируйте скрипты. Не забывайте указывать источник
+    <strong>xmlcalendar.ru</strong> и соблюдать их лицензию.
+  </p>
+
+  <h2>Заключение</h2>
+  <p>
+    <strong>WorkingCalendar</strong> и сайт
+    <strong>workingcalendar.ru</strong> предоставляют практичный способ
+    автоматизировать создание и актуализацию производственного календаря в БД. В
+    отличие от “гайдов с советами”, здесь есть полноценный API и генератор SQL
+    для PostgreSQL/MySQL/MSSQL. Выбираете год, СУБД и схему рабочей недели —
+    получаете готовый скрипт для создания и заполнения таблицы. Благодаря
+    официальным данным, поддержке разных СУБД и простой процедуре обновления
+    решение подходит для первичного внедрения и регулярных апдейтов.
+  </p>
+</main>

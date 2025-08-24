@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Название статьи</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- Навигационная панель -->
+    <header id="top" class="site-header" role="banner">
+      <div class="container header-grid">
+        <div class="logo-container">
+          <div class="logo-placeholder">
+            <!-- Кликабельное фото с превью -->
+            <img
+              id="previewImg"
+              alt="Фото Максима Ситникова"
+              src="../images/maksim.png"
+              width="512"
+              height="512"
+              class="logo-image logo-image--clickable"
+              decoding="async"
+            />
+            <a href="/" class="logo-link"><h1 class="logo">yellow444</h1></a>
+            <a href="/" class="logo-link">
+              <img
+                alt="Аватар GitHub"
+                src="https://avatars.githubusercontent.com/u/4164963?v=4"
+                width="460"
+                height="460"
+                class="logo-image"
+                decoding="async"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Бургер -->
+        <button
+          id="menuToggle"
+          class="burger"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="menu-placeholder"></div>
+      </div>
+    </header>
+    <!-- Модальное окно для превью изображения -->
+    <div
+      id="imgModal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Превью изображения"
+    >
+      <button class="close" id="modalClose" aria-label="Закрыть">
+        &times;
+      </button>
+      <img class="modal-content" id="modalImg" alt="Превью изображения" />
+    </div>
+
+    <div id="article-content"></div>
+
+    <!-- Блок «Контакты» -->
+    <section
+      id="contact"
+      class="section section-alt"
+      role="region"
+      aria-label="Контакты"
+    >
+      <div class="container">
+        <h2>Контакты</h2>
+        <ul class="contact-list">
+          <li>
+            <strong>Телефон:</strong>
+            <a href="tel:+79099946571">+7 909 994-65-71</a>
+          </li>
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:yellow444@gmail.com">yellow444@gmail.com</a>
+          </li>
+          <li>
+            <strong>Telegram:</strong>
+            <a
+              href="https://t.me/magnMaks"
+              target="_blank"
+              rel="noopener noreferrer"
+              >@magnMaks</a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+    <a href="#top" class="floating-btn" id="backToTopBtn" aria-label="Наверх"
+      >↑ Наверх</a
+    >
+
+    <script type="module" src="../scripts/loadMenu.js"></script>
+    <!-- Скрипты: загрузка контента, бургер + кнопка «Наверх» + модальное превью -->
+    <script>
+      // Загрузка контента статьи
+      (function () {
+        const params = new URLSearchParams(window.location.search);
+        const content = params.get("content");
+        if (content) {
+          fetch(`${content}_content.html`)
+            .then((response) => response.text())
+            .then((html) => {
+              document.getElementById("article-content").innerHTML = html;
+            });
+        }
+      })();
+
+      // Бургер-меню
+      document.addEventListener("menuLoaded", () => {
+        const toggle = document.getElementById("menuToggle");
+        const nav = document.getElementById("mainNav");
+        toggle.addEventListener("click", () => {
+          const isOpen = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          document.body.classList.toggle("no-scroll-nav", isOpen);
+        });
+        // Закрывать меню по клику на ссылку
+        nav.addEventListener("click", (e) => {
+          if (e.target.tagName === "A" && nav.classList.contains("open")) {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            document.body.classList.remove("no-scroll-nav");
+          }
+        });
+      });
+
+      // Плавающая кнопка «Наверх»
+      (function () {
+        const btn = document.getElementById("backToTopBtn");
+        window.addEventListener("scroll", function () {
+          btn.style.display = window.scrollY > 50 ? "block" : "none";
+        });
+        btn.style.display = "none";
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+
+      // Модальное превью изображения
+      (function () {
+        const modal = document.getElementById("imgModal");
+        const img = document.getElementById("previewImg");
+        const modalImg = document.getElementById("modalImg");
+        const closeBtn = document.getElementById("modalClose");
+
+        function openModal() {
+          modal.style.display = "block";
+          modal.setAttribute("aria-hidden", "false");
+          modalImg.src = img.src;
+          document.body.classList.add("no-scroll"); // блокируем скролл фона
+          closeBtn.focus();
+        }
+        function closeModal() {
+          modal.style.display = "none";
+          modal.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("no-scroll");
+        }
+
+        img.addEventListener("click", openModal);
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.style.display === "block")
+            closeModal();
+        });
+      })();
+    </script>
+  </body>
+</html>
