@@ -72,7 +72,7 @@ body.no-scroll-nav { overflow: hidden; }
 .header-grid {
   display: grid;
   grid-template-columns: 1fr auto auto;
-  gap: 1rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
@@ -101,8 +101,8 @@ body.no-scroll-nav { overflow: hidden; }
 /* Меню */
 .main-nav ul {
   list-style: none;
-  display: flex;
-  gap: 1rem;
+  display: none;
+  gap: 0.4rem;
 }
 .main-nav a {
   color: #fff;
