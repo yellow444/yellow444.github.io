@@ -1,59 +1,194 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
-        }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        "script",
-        "https://mc.yandex.ru/metrika/tag.js?id=103887739",
-        "ym"
-      );
-      ym(103887739, "init", {
-        ssr: true,
-        clickmap: true,
-        accurateTrackBounce: true,
-        trackLinks: true,
-      });
-    </script>
-    <noscript
-      ><div>
-        <img
-          src="https://mc.yandex.ru/watch/103887739"
-          style="position: absolute; left: -9999px"
-          alt=""
-        /></div
-    ></noscript>
-    <!-- /Yandex.Metrika counter -->
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <title>Название статьи</title>
+    <meta name="author" content="Максим Ситников" />
+    <meta name="theme-color" content="#1e2a47" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Styles -->
     <link rel="stylesheet" href="../style.css" />
+
+    <style>
+      /* === Стили контента статьи === */
+      #article-content {
+        padding: 2rem 0 1rem;
+      }
+
+      #article-content h1 {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+        line-height: 1.3;
+      }
+
+      #article-content h2 {
+        font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+        font-weight: 700;
+        color: var(--text);
+        margin: 2rem 0 .8rem;
+        line-height: 1.35;
+      }
+
+      #article-content h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text);
+        margin: 1.5rem 0 .6rem;
+      }
+
+      #article-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+
+      #article-content ul,
+      #article-content ol {
+        margin: .6rem 0 1rem 1.4rem;
+        padding: 0;
+        color: var(--text);
+      }
+
+      #article-content li {
+        font-size: 1.02rem;
+        line-height: 1.65;
+        margin-bottom: .35rem;
+      }
+
+      #article-content code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: .92em;
+        background: #edf1f7;
+        color: #c7254e;
+        padding: .15em .4em;
+        border-radius: .3rem;
+      }
+
+      #article-content pre {
+        background: #1e2a47;
+        color: #e0e4ed;
+        padding: 1.2rem 1.4rem;
+        border-radius: .6rem;
+        overflow-x: auto;
+        font-size: .92rem;
+        line-height: 1.55;
+        margin: 1rem 0 1.2rem;
+      }
+
+      #article-content pre code {
+        background: none;
+        color: inherit;
+        padding: 0;
+        font-size: inherit;
+      }
+
+      #article-content a {
+        color: var(--brand);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      #article-content a:hover {
+        color: var(--brand-soft);
+      }
+
+      #article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: .5rem;
+        margin: 1rem 0;
+      }
+
+      #article-content strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      #article-content blockquote {
+        border-left: 4px solid var(--brand);
+        margin: 1rem 0;
+        padding: .6rem 1rem;
+        background: rgba(25, 103, 210, .06);
+        border-radius: 0 .4rem .4rem 0;
+        color: var(--text);
+      }
+
+      /* Тёмная тема — article content */
+      @media (prefers-color-scheme: dark) {
+        #article-content code {
+          background: #253350;
+          color: #f7a8b8;
+        }
+
+        #article-content pre {
+          background: #0b1222;
+          color: #d0d6e0;
+        }
+
+        #article-content blockquote {
+          background: rgba(92, 184, 255, .08);
+          border-left-color: var(--brand);
+        }
+      }
+
+      /* Секция контактов в статьях */
+      .article-contacts {
+        background: var(--bg);
+      }
+
+      .article-contacts h2 {
+        color: var(--text);
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .8rem 2rem;
+      }
+
+      .contact-list li {
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .contact-list a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+
+      .contact-list a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- Analytics (async) -->
+    <script src="../scripts/analytics.js" defer></script>
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/103887739"
+          style="position: absolute; left: -9999px"
+          alt=""
+        />
+      </div>
+    </noscript>
   </head>
   <body>
     <!-- Навигационная панель -->
@@ -61,18 +196,20 @@
       <div class="container header-grid">
         <div class="logo-container">
           <div class="logo-placeholder">
-            <!-- Кликабельное фото с превью -->
-            <img
-              id="previewImg"
-              alt="Фото Максима Ситникова"
-              src="../images/maksim.png"
-              width="512"
-              height="512"
-              class="logo-image logo-image--clickable"
-              decoding="async"
-            />
-            <a href="/" class="logo-link"><h1 class="logo">yellow444</h1></a>
-            <a href="/" class="logo-link">
+            <picture>
+              <source srcset="../images/maksim.webp" type="image/webp" />
+              <img
+                id="previewImg"
+                alt="Фото Максима Ситникова"
+                src="../images/maksim.png"
+                width="256"
+                height="256"
+                class="logo-image logo-image--clickable"
+                decoding="async"
+              />
+            </picture>
+            <a href="/" class="logo-link" tooltip="На главную"><h1 class="logo">Maksim<br/>Sitnikov</h1></a>
+            <a href="/" class="logo-link" aria-label="GitHub avatar">
               <img
                 alt="Аватар GitHub"
                 src="https://avatars.githubusercontent.com/u/4164963?v=4"
@@ -100,6 +237,7 @@
         <div id="menu-placeholder"></div>
       </div>
     </header>
+
     <!-- Модальное окно для превью изображения -->
     <div
       id="imgModal"
@@ -114,137 +252,68 @@
       <img class="modal-content" id="modalImg" alt="Превью изображения" />
     </div>
 
-    <div id="article-content"></div>
-
-    <!-- Блок «Контакты» -->
-    <section
-      id="contact"
-      class="section section-alt"
-      role="region"
-      aria-label="Контакты"
-    >
+    <!-- Контент статьи -->
+    <section class="section">
       <div class="container">
-        <h2>Контакты</h2>
-        <ul class="contact-list">
-          <li>
-            <strong>Телефон:</strong>
-            <a href="tel:+79099946571">+7 909 994-65-71</a>
-          </li>
-          <li>
-            <strong>Email:</strong>
-            <a href="mailto:yellow444@gmail.com">yellow444@gmail.com</a>
-          </li>
-          <li>
-            <strong>Telegram:</strong>
-            <a
-              href="https://t.me/magnMaks"
-              target="_blank"
-              rel="noopener noreferrer"
-              >@magnMaks</a
-            >
-          </li>
-        </ul>
+        <div id="article-content"></div>
       </div>
     </section>
-    <a href="#top" class="floating-btn" id="backToTopBtn" aria-label="Наверх"
-      >↑ Наверх</a
-    >
 
-    <script type="module" src="../scripts/loadMenu.js"></script>
-    <!-- Скрипты: загрузка контента, бургер + кнопка «Наверх» + модальное превью -->
+    <!-- CTA -->
+    <section id="contact" class="section cta-section" role="region" aria-label="Связаться">
+      <div class="container cta-container">
+        <h2>Связаться</h2>
+        <p>Готов обсудить проекты в области .NET, DevOps и микросервисной архитектуры.</p>
+        <div class="cta-buttons">
+          <a class="cta-btn cta-btn--primary" href="https://t.me/magnMaks" target="_blank" rel="noopener noreferrer">
+            Написать в Telegram
+          </a>
+          <a class="cta-btn cta-btn--secondary" href="https://github.com/yellow444" target="_blank" rel="noopener noreferrer">
+            Смотреть GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 Максим Ситников. Исходный код на <a href="https://github.com/yellow444/yellow444.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </div>
+    </footer>
+
+    <!-- Плавающая кнопка «Наверх» -->
+    <a href="#top" id="backToTopBtn" class="floating-btn" aria-label="Наверх">↑ Наверх</a>
+
+    <!-- Скрипты -->
+    <script src="../scripts/loadMenu.js" defer></script>
+    <script src="../scripts/ui.js" defer></script>
+
     <script>
       // Загрузка контента статьи
       (function () {
-        const params = new URLSearchParams(window.location.search);
-        const content = params.get("content");
+        var params = new URLSearchParams(window.location.search);
+        var content = params.get("content");
         if (content) {
-          fetch(`${content}_content.html`)
-            .then((response) => response.text())
-            .then((html) => {
+          // Sanitize: only allow alphanumeric, underscores, hyphens
+          if (!/^[a-zA-Z0-9_-]+$/.test(content)) return;
+          fetch(content + "_content.html")
+            .then(function (r) {
+              if (!r.ok) throw new Error(r.status);
+              return r.text();
+            })
+            .then(function (html) {
               document.getElementById("article-content").innerHTML = html;
+              // Обновить title из h1 контента
+              var h1 = document.querySelector("#article-content h1");
+              if (h1) document.title = h1.textContent + " — Максим Ситников";
+            })
+            .catch(function () {
+              document.getElementById("article-content").innerHTML =
+                '<p style="text-align:center;padding:3rem 0;color:var(--text);">Статья не найдена.</p>';
             });
         }
       })();
-
-      // Бургер-меню
-      document.addEventListener("menuLoaded", () => {
-        const toggle = document.getElementById("menuToggle");
-        const nav = document.getElementById("mainNav");
-        toggle.addEventListener("click", () => {
-          const isOpen = nav.classList.toggle("open");
-          toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          document.body.classList.toggle("no-scroll-nav", isOpen);
-        });
-        // Закрывать меню по клику на ссылку
-        nav.addEventListener("click", (e) => {
-          if (e.target.tagName === "A" && nav.classList.contains("open")) {
-            nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-            document.body.classList.remove("no-scroll-nav");
-          }
-        });
-      });
-
-      // Плавающая кнопка «Наверх»
-      (function () {
-        const btn = document.getElementById("backToTopBtn");
-        window.addEventListener("scroll", function () {
-          btn.style.display = window.scrollY > 50 ? "block" : "none";
-        });
-        btn.style.display = "none";
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      })();
-
-      // Модальное превью изображения
-      (function () {
-        const modal = document.getElementById("imgModal");
-        const img = document.getElementById("previewImg");
-        const modalImg = document.getElementById("modalImg");
-        const closeBtn = document.getElementById("modalClose");
-
-        function openModal() {
-          modal.style.display = "block";
-          modal.setAttribute("aria-hidden", "false");
-          modalImg.src = img.src;
-          document.body.classList.add("no-scroll"); // блокируем скролл фона
-          closeBtn.focus();
-        }
-        function closeModal() {
-          modal.style.display = "none";
-          modal.setAttribute("aria-hidden", "true");
-          document.body.classList.remove("no-scroll");
-        }
-
-        img.addEventListener("click", openModal);
-        closeBtn.addEventListener("click", closeModal);
-        modal.addEventListener("click", function (e) {
-          if (e.target === modal) closeModal();
-        });
-        document.addEventListener("keydown", function (e) {
-          if (e.key === "Escape" && modal.style.display === "block")
-            closeModal();
-        });
-      })();
     </script>
-    <!-- Yandex.Metrika informer -->
-    <a
-      href="https://metrika.yandex.ru/stat/?id=103887739&amp;from=informer"
-      target="_blank"
-      rel="nofollow"
-    >
-      <img
-        src="https://informer.yandex.ru/informer/103887739/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
-        style="width: 88px; height: 31px; border: 0"
-        alt="Яндекс.Метрика"
-        title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
-        class="ym-advanced-informer"
-        data-cid="103887739"
-        data-lang="ru"
-      />
-    </a>
-    <!-- /Yandex.Metrika informer -->
   </body>
 </html>

@@ -1029,29 +1029,6 @@ min-width: 0;
   letter-spacing: .02em;
 }
 
-.skill-modal__level {
-  font-size: .85rem;
-  color: #7a879c;
-}
-
-.skill-modal__level-bar {
-  display: inline-flex;
-  gap: 3px;
-  margin-left: .45rem;
-  vertical-align: middle;
-}
-
-.skill-modal__level-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #dce3ed;
-}
-
-.skill-modal__level-dot.filled {
-  background: var(--brand);
-}
-
 /* ===== ТЁМНАЯ ТЕМА ===== */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -1237,14 +1214,6 @@ min-width: 0;
   .skill-modal__tag {
     background: #253350;
     color: #8ab4f8;
-  }
-
-  .skill-modal__level {
-    color: #90a0b8;
-  }
-
-  .skill-modal__level-dot {
-    background: #2a3a55;
   }
 
   /* Ссылки общие */
