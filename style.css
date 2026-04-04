@@ -57,7 +57,7 @@ a:hover {
 }
 
 .container {
-  width: min(94%, 1100px);
+  width: min(92%, 1320px);
   margin-inline: auto;
   padding: 2rem 0;
 }
@@ -130,7 +130,7 @@ body.no-scroll-nav {
 /* Меню */
 .main-nav ul {
   list-style: none;
-  display: block;
+  display: flex;
   gap: 0.4rem;
 }
 
@@ -254,6 +254,7 @@ body.no-scroll-nav {
 /* ===== СЕКЦИИ ===== */
 .section {
   padding: clamp(2rem, 4vw, 4rem) 0;
+  background: var(--bg);
 }
 
 .section-alt {
@@ -908,86 +909,169 @@ min-width: 0;
 /* ===== ТЁМНАЯ ТЕМА ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #121827;
-    --text: #e0e4ed;
-    --brand: #4dabf7;
-    --brand-soft: #339af0;
-    --header: #0d1117;
-    --tooltip-bg: #1e2a47;
+    --bg: #0f1521;
+    --text: #f0f2f5;
+    --brand: #5cb8ff;
+    --brand-soft: #3ea6f7;
+    --header: #0b0f18;
+    --tooltip-bg: #1c2840;
     --tooltip-text: #ffffff;
   }
 
   html {
-    background-color: #0d1117;
+    background-color: #0b0f18;
   }
 
   body {
     color: var(--text);
   }
 
+  /* Секции */
+  .section {
+    background: var(--bg);
+  }
+
   section h2 {
-    color: #e0e4ed;
+    color: #ffffff;
   }
 
   .section-alt {
-    background: #1a2035;
+    background: #151d2e;
   }
 
+  /* Текст в секциях */
+  section#about p {
+    color: #d0d6e0;
+  }
+
+  .experience-item p {
+    color: #c8cdd8;
+  }
+
+  .article-item p {
+    color: #c8cdd8;
+  }
+
+  /* Карточки */
   .skill-card,
   .project-card {
-    background: #1e2a3e;
-    border-color: #2d3a52;
+    background: #1a2438;
+    border-color: #2a3a55;
+    color: #e8ecf2;
   }
 
   .skill-card:hover {
-    box-shadow: 0 8px 22px rgba(0, 0, 0, .3);
-    border-color: #3d4e6e;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, .4);
+    border-color: #4a6080;
+  }
+
+  .skill-card p,
+  .project-card p {
+    color: #c8d0dc;
+  }
+
+  .skill-title {
+    color: var(--brand);
   }
 
   .hard-skills-grid {
-    background: #1a2035;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+    background: #151d2e;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
   }
 
   .skill-content {
-    border-top-color: #2d3a52;
+    border-top-color: #2a3a55;
   }
 
+  /* OG карточки */
   .og-card {
-    background: #1e2a3e;
-    border-color: #2d3a52;
+    background: #1a2438;
+    border-color: #2a3a55;
   }
 
   .og-thumb {
-    background: #1a2035;
-    border-right-color: #2d3a52;
+    background: #151d2e;
+    border-right-color: #2a3a55;
   }
 
   .og-title {
-    color: #e0e4ed;
+    color: #f0f2f5;
   }
 
   .og-desc {
-    color: #a0b0c8;
+    color: #b8c4d4;
   }
 
+  .og-site {
+    color: #8899b0;
+  }
+
+  /* Опыт */
   .experience-details {
-    color: #a0b0c8;
+    color: #bcc6d4;
+  }
+
+  .experience-item h3 {
+    color: var(--brand);
+  }
+
+  .years {
+    color: #90a0b8;
+  }
+
+  /* Проекты */
+  .project-card h3 {
+    color: var(--brand);
   }
 
   .project-card .project-meta {
-    color: #8899b0;
+    color: #90a0b8;
   }
 
+  /* Статьи */
   .article-meta {
+    color: #90a0b8;
+  }
+
+  .article-item h3 a {
+    color: var(--brand);
+  }
+
+  /* Навыки */
+  .group-title h3 {
+    color: #f0f2f5;
+  }
+
+  .group-title::before {
+    color: var(--brand);
+  }
+
+  /* CTA */
+  .cta-section {
+    background: #0b0f18;
+  }
+
+  .cta-section p {
+    color: #b8c4d4;
+  }
+
+  /* Футер */
+  .site-footer {
+    background: #080c14;
     color: #8899b0;
   }
 
-  .group-title h3 {
-    color: #e0e4ed;
+  .site-footer a {
+    color: var(--brand);
   }
 
-  .site-footer {
-    background: #0d1117;
+  /* Ссылки общие */
+  a {
+    color: var(--brand);
+  }
+
+  /* Хедер контакты */
+  .contact-chip {
+    color: #f0f2f5;
   }
 }
