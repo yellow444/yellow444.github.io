@@ -34,7 +34,7 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   letter-spacing: 0.2px;
   color: var(--text);
   background: transparent;
@@ -271,7 +271,7 @@ section h2 {
 
 section#about p {
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 1.05rem;
 }
 
 /* ===== СЕТКИ ===== */
@@ -406,7 +406,7 @@ section#about p {
 
 .skill-card p {
   margin: 0.35rem 0 0;
-  font-size: .95rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
@@ -418,12 +418,12 @@ section#about p {
 }
 
 .project-card p {
-  font-size: .95rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
 .project-card .project-meta {
-  font-size: .85rem;
+  font-size: .88rem;
   color: #5a6b8b;
 }
 
@@ -441,7 +441,7 @@ section#about p {
 
 .experience-item p {
   margin: 0;
-  font-size: .95rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -465,13 +465,13 @@ section#about p {
 }
 
 .article-item p {
-  font-size: .95rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin-bottom: .4rem;
 }
 
 .article-meta {
-  font-size: .85rem;
+  font-size: .88rem;
   color: #5a6b8b;
 }
 
@@ -479,7 +479,7 @@ section#about p {
 .contact-list {
   list-style: none;
   padding-left: 0;
-  font-size: .98rem;
+  font-size: 1.02rem;
 }
 
 .contact-list li {
@@ -496,7 +496,7 @@ section#about p {
   color: #a6b1c2;
   padding: 1rem 0;
   text-align: center;
-  font-size: .85rem;
+  font-size: .9rem;
 }
 
 .floating-btn {
@@ -860,7 +860,7 @@ section#about p {
 }
 
 .og-desc {
-  font-size: .92rem;
+  font-size: .95rem;
   color: #425170;
   line-height: 1.45;
 }
@@ -904,6 +904,152 @@ width: 200px;
 height: auto;
 cursor: pointer;
 min-width: 0;
+}
+
+/* ===== МОДАЛКА НАВЫКОВ ===== */
+.skill-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.skill-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.skill-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(92%, 520px);
+  max-height: calc(100svh - 4rem);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 2rem 1.5rem;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, .22), 0 2px 12px rgba(0, 0, 0, .08);
+  animation: skillModalIn .2s ease-out;
+}
+
+@keyframes skillModalIn {
+  from { opacity: 0; transform: translateY(20px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.skill-modal__close {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  font-size: 1.6rem;
+  color: #7a879c;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background .15s, color .15s;
+  line-height: 1;
+}
+
+.skill-modal__close:hover {
+  background: #f0f2f5;
+  color: #2d364c;
+}
+
+.skill-modal__title {
+  margin: 0 0 .35rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--brand);
+  padding-right: 2rem;
+}
+
+.skill-modal__subtitle {
+  margin: 0 0 1.1rem;
+  font-size: .95rem;
+  color: #6b7a94;
+  line-height: 1.45;
+}
+
+.skill-modal__body {
+  margin-bottom: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.skill-modal__body p {
+  margin: 0 0 .65rem;
+}
+
+.skill-modal__body ul {
+  margin: .4rem 0 .65rem 1.2rem;
+  padding: 0;
+  list-style: disc;
+}
+
+.skill-modal__body li {
+  margin-bottom: .3rem;
+  font-size: .95rem;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+.skill-modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-bottom: .85rem;
+}
+
+.skill-modal__tag {
+  display: inline-block;
+  padding: .2rem .6rem;
+  background: #edf2f9;
+  color: #3d5a80;
+  border-radius: .35rem;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.skill-modal__level {
+  font-size: .85rem;
+  color: #7a879c;
+}
+
+.skill-modal__level-bar {
+  display: inline-flex;
+  gap: 3px;
+  margin-left: .45rem;
+  vertical-align: middle;
+}
+
+.skill-modal__level-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #dce3ed;
+}
+
+.skill-modal__level-dot.filled {
+  background: var(--brand);
 }
 
 /* ===== ТЁМНАЯ ТЕМА ===== */
@@ -1063,6 +1209,42 @@ min-width: 0;
 
   .site-footer a {
     color: var(--brand);
+  }
+
+  /* Модалка навыков */
+  .skill-modal__overlay {
+    background: rgba(0, 0, 0, .7);
+  }
+
+  .skill-modal__dialog {
+    background: #1a2438;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, .5);
+  }
+
+  .skill-modal__close:hover {
+    background: #2a3a55;
+    color: #f0f2f5;
+  }
+
+  .skill-modal__subtitle {
+    color: #90a0b8;
+  }
+
+  .skill-modal__body li {
+    color: #c8d0dc;
+  }
+
+  .skill-modal__tag {
+    background: #253350;
+    color: #8ab4f8;
+  }
+
+  .skill-modal__level {
+    color: #90a0b8;
+  }
+
+  .skill-modal__level-dot {
+    background: #2a3a55;
   }
 
   /* Ссылки общие */

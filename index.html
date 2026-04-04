@@ -259,22 +259,6 @@
             </p>
           </div>
           <div class="project-card">
-            <a href="https://opencv.org"><h3>learnopencv (fork)</h3></a>
-            <p>Примеры по OpenCV на C++ и Python. База для обучения компьютерному зрению.</p>
-            <p class="project-meta">
-              Jupyter Notebook |
-              <a href="https://github.com/yellow444/learnopencv" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </div>
-          <div class="project-card">
-            <a href="https://docs.cryptopro.ru/cades/pycades"><h3>PyCades</h3></a>
-            <p>ЭЦП и криптография в Python (COM CAdESCOM). Интеграция с Госуслугами.</p>
-            <p class="project-meta">
-              Python |
-              <a href="https://github.com/yellow444/pycades" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </div>
-          <div class="project-card">
             <a href="https://www.codewars.com/kata/59c13bb070a3b70098000041"><h3>Morse-Code-Translator</h3></a>
             <p>Перевод текста в азбуку Морзе и обратно. Алгоритмические задачи на C#.</p>
             <p class="project-meta">
@@ -288,14 +272,6 @@
             <p class="project-meta">
               Xamarin |
               <a href="https://github.com/yellow444/FattyFood" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </div>
-          <div class="project-card">
-            <a href="https://www.codewars.com/kata/53d40c1e2f13e331fc000c26"><h3>Fibonacci</h3></a>
-            <p>Вычисление чисел Фибоначчи на C#: рекурсия и оптимизация.</p>
-            <p class="project-meta">
-              C# |
-              <a href="https://github.com/yellow444/Fibonacci" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
           <div class="project-card">
@@ -795,10 +771,7 @@
         <!-- CI/CD и DevOps -->
         <details class="skills-group">
           <summary class="group-title">
-            <h3>
-              CI/CD и DevOps: GitLab CI, TFS 2018 (Build/Release), Jenkins
-              (pipelines), Git
-            </h3>
+            <h3>CI/CD и DevOps</h3>
           </summary>
           <div class="skills-grid">
             <div class="skill-card" data-skill="gitlabci">
@@ -919,6 +892,66 @@
                 </p>
               </div>
             </div>
+
+            <div class="skill-card" data-skill="ado-agents">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-ado"
+              >
+                Azure DevOps
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Пулы агентов, пайплайны, артефакты.
+              </div>
+              <div class="skill-content" id="skill-ado" hidden>
+                <p>
+                  Конфигурация агентов Windows/Linux, маркеры, параллельные
+                  сборки, безопасность секретов, YAML-пайплайны.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="octopus">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-octopus"
+              >
+                Octopus Deploy
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Автоматизация деплоя и управление релизами.
+              </div>
+              <div class="skill-content" id="skill-octopus" hidden>
+                <p>
+                  Проекты, окружения, переменные, Runbooks, интеграция с
+                  CI-серверами, Tenants.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="ghactions">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-ghactions"
+              >
+                GitHub Actions
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                CI/CD в экосистеме GitHub.
+              </div>
+              <div class="skill-content" id="skill-ghactions" hidden>
+                <p>
+                  Workflows, matrix builds, reusable actions, secrets, деплой на
+                  GitHub Pages и Docker Registry.
+                </p>
+              </div>
+            </div>
           </div>
         </details>
 
@@ -948,41 +981,22 @@
               </div>
             </div>
 
-            <div class="skill-card" data-skill="verdaccio">
+            <div class="skill-card" data-skill="compose">
               <button
                 class="skill-title"
                 type="button"
                 aria-expanded="false"
-                aria-controls="skill-verdaccio"
+                aria-controls="skill-compose"
               >
-                Verdaccio
+                Docker Compose
               </button>
               <div class="skill-tooltip" role="tooltip">
-                Локальный npm-реестр.
+                Оркестрация контейнеров для разработки.
               </div>
-              <div class="skill-content" id="skill-verdaccio" hidden>
+              <div class="skill-content" id="skill-compose" hidden>
                 <p>
-                  Настройка и использование Verdaccio для кэширования
-                  npm-пакетов.
-                </p>
-              </div>
-            </div>
-
-            <div class="skill-card" data-skill="nuget">
-              <button
-                class="skill-title"
-                type="button"
-                aria-expanded="false"
-                aria-controls="skill-nuget"
-              >
-                NuGet
-              </button>
-              <div class="skill-tooltip" role="tooltip">
-                Управление пакетами для .NET.
-              </div>
-              <div class="skill-content" id="skill-nuget" hidden>
-                <p>
-                  Создание и публикация NuGet-пакетов, работа с .nuspec файлами.
+                  Многоконтейнерные среды, сети, volumes, override-файлы,
+                  профили для dev/test/prod.
                 </p>
               </div>
             </div>
@@ -1043,6 +1057,72 @@
                 <p>
                   Ingress-ресурсы, аннотации, cert-manager, балансировка и
                   безопасность.
+                </p>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <!-- Пакетные реестры -->
+        <details class="skills-group">
+          <summary class="group-title"><h3>Пакетные реестры</h3></summary>
+          <div class="skills-grid">
+            <div class="skill-card" data-skill="nuget">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-nuget"
+              >
+                NuGet
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Управление .NET-пакетами.
+              </div>
+              <div class="skill-content" id="skill-nuget" hidden>
+                <p>
+                  Создание и публикация NuGet-пакетов, работа с .nuspec,
+                  частные фиды.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="verdaccio">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-verdaccio"
+              >
+                Verdaccio
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Локальный npm-реестр.
+              </div>
+              <div class="skill-content" id="skill-verdaccio" hidden>
+                <p>
+                  Настройка и использование Verdaccio для кэширования
+                  npm-пакетов и приватных модулей.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="harbor">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-harbor"
+              >
+                Harbor / Docker Registry
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Приватные реестры Docker-образов.
+              </div>
+              <div class="skill-content" id="skill-harbor" hidden>
+                <p>
+                  Хранение и управление Docker-образами, сканирование
+                  уязвимостей, репликация между площадками.
                 </p>
               </div>
             </div>
@@ -1128,6 +1208,46 @@
                 <p>
                   Cypher-запросы, графовые отношения, оптимизация под
                   отчётность/затраты.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="redis">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-redis"
+              >
+                Redis
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Кэширование, сессии, Pub/Sub.
+              </div>
+              <div class="skill-content" id="skill-redis" hidden>
+                <p>
+                  Кэширование данных, распределённые блокировки, Pub/Sub,
+                  Streams, Sentinel/Cluster.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="elasticsearch">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-elastic"
+              >
+                Elasticsearch
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Полнотекстовый поиск и аналитика логов.
+              </div>
+              <div class="skill-content" id="skill-elastic" hidden>
+                <p>
+                  Индексы, маппинги, агрегации, Kibana-дашборды, ELK-стек для
+                  логирования.
                 </p>
               </div>
             </div>
@@ -1280,19 +1400,19 @@
               </div>
             </div>
 
-            <div class="skill-card" data-skill="ngcp ">
+            <div class="skill-card" data-skill="ngcp">
               <button
                 class="skill-title"
                 type="button"
                 aria-expanded="false"
-                aria-controls="skill-ngcp "
+                aria-controls="skill-ngcp"
               >
                 NGCP
               </button>
               <div class="skill-tooltip" role="tooltip">
                 Протокол управления.
               </div>
-              <div class="skill-content" id="skill-ngcp " hidden>
+              <div class="skill-content" id="skill-ngcp" hidden>
                 <p>Расширенный протокол управления RTPengine.</p>
               </div>
             </div>
@@ -1425,6 +1545,46 @@
                 </p>
               </div>
             </div>
+
+            <div class="skill-card" data-skill="elk">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-elk"
+              >
+                ELK Stack
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Централизованное логирование.
+              </div>
+              <div class="skill-content" id="skill-elk" hidden>
+                <p>
+                  Elasticsearch + Logstash + Kibana: сбор, парсинг и
+                  визуализация логов приложений и инфраструктуры.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="jaeger">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-jaeger"
+              >
+                Jaeger / OpenTelemetry
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Распределённая трассировка.
+              </div>
+              <div class="skill-content" id="skill-jaeger" hidden>
+                <p>
+                  Трассировка запросов в микросервисах, интеграция OpenTelemetry
+                  SDK, анализ латентности.
+                </p>
+              </div>
+            </div>
           </div>
         </details>
 
@@ -1507,6 +1667,46 @@
                 <p>
                   Сайты/пулы приложений, развертывание, логи, ограничения и
                   безопасность.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="apache">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-apache"
+              >
+                Apache HTTP Server
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Классический веб-сервер, .htaccess, mod_rewrite.
+              </div>
+              <div class="skill-content" id="skill-apache" hidden>
+                <p>
+                  Виртуальные хосты, mod_proxy, mod_ssl, URL rewriting, .htaccess
+                  и управление доступом.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="caddy">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-caddy"
+              >
+                Caddy
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Автоматический HTTPS, zero-config сервер.
+              </div>
+              <div class="skill-content" id="skill-caddy" hidden>
+                <p>
+                  Автоматическое получение сертификатов, реверс-прокси,
+                  Caddyfile, API-управление.
                 </p>
               </div>
             </div>
@@ -1655,6 +1855,92 @@
           </div>
         </details>
 
+        <!-- Тестирование -->
+        <details class="skills-group">
+          <summary class="group-title"><h3>Тестирование</h3></summary>
+          <div class="skills-grid">
+            <div class="skill-card" data-skill="xunit">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-xunit"
+              >
+                xUnit / NUnit
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Unit-тестирование .NET.
+              </div>
+              <div class="skill-content" id="skill-xunit" hidden>
+                <p>
+                  Unit-тесты, параметризованные тесты (Theory/TestCase),
+                  интеграция с CI, покрытие кода.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="moq">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-moq"
+              >
+                Moq / NSubstitute
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Мокирование зависимостей.
+              </div>
+              <div class="skill-content" id="skill-moq" hidden>
+                <p>
+                  Мок-объекты для unit-тестов, верификация вызовов, настройка
+                  возвращаемых значений.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="selenium">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-selenium"
+              >
+                Selenium / Playwright
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                E2E-тестирование веб-приложений.
+              </div>
+              <div class="skill-content" id="skill-selenium" hidden>
+                <p>
+                  Автоматизация браузерных тестов, Page Object Model,
+                  параллельный запуск, CI-интеграция.
+                </p>
+              </div>
+            </div>
+
+            <div class="skill-card" data-skill="postman">
+              <button
+                class="skill-title"
+                type="button"
+                aria-expanded="false"
+                aria-controls="skill-postman"
+              >
+                Postman / Newman
+              </button>
+              <div class="skill-tooltip" role="tooltip">
+                Тестирование API.
+              </div>
+              <div class="skill-content" id="skill-postman" hidden>
+                <p>
+                  Коллекции запросов, окружения, автотесты, интеграция Newman в
+                  CI/CD-пайплайны.
+                </p>
+              </div>
+            </div>
+          </div>
+        </details>
+
         <!-- OS и окружение -->
         <details class="skills-group">
           <summary class="group-title"><h3>OS и окружение</h3></summary>
@@ -1699,25 +1985,6 @@
               </div>
             </div>
 
-            <div class="skill-card" data-skill="ado-agents">
-              <button
-                class="skill-title"
-                type="button"
-                aria-expanded="false"
-                aria-controls="skill-ado"
-              >
-                Azure DevOps агенты
-              </button>
-              <div class="skill-tooltip" role="tooltip">
-                Пулы агентов Windows/Linux для билдов и релизов.
-              </div>
-              <div class="skill-content" id="skill-ado" hidden>
-                <p>
-                  Конфигурация агентов, маркеры, параллельные сборки,
-                  безопасность секретов.
-                </p>
-              </div>
-            </div>
           </div>
         </details>
       </div>
@@ -1737,6 +2004,19 @@
         </div>
       </div>
     </section>
+
+    <!-- Модалка для навыков -->
+    <div id="skillModal" class="skill-modal" aria-hidden="true" role="dialog" aria-labelledby="skillModalTitle">
+      <div class="skill-modal__overlay"></div>
+      <div class="skill-modal__dialog">
+        <button class="skill-modal__close" id="skillModalClose" aria-label="Закрыть">&times;</button>
+        <h3 class="skill-modal__title" id="skillModalTitle"></h3>
+        <p class="skill-modal__subtitle" id="skillModalSubtitle"></p>
+        <div class="skill-modal__body" id="skillModalBody"></div>
+        <div class="skill-modal__tags" id="skillModalTags"></div>
+        <div class="skill-modal__level" id="skillModalLevel"></div>
+      </div>
+    </div>
 
     <!-- Футер -->
     <footer class="site-footer">
