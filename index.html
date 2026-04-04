@@ -1,39 +1,62 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <!-- Yandex.Metrika counter -->
-    <script type="text/javascript">
-      (function (m, e, t, r, i, k, a) {
-        m[i] =
-          m[i] ||
-          function () {
-            (m[i].a = m[i].a || []).push(arguments);
-          };
-        m[i].l = 1 * new Date();
-        for (var j = 0; j < document.scripts.length; j++) {
-          if (document.scripts[j].src === r) {
-            return;
-          }
-        }
-        (k = e.createElement(t)),
-          (a = e.getElementsByTagName(t)[0]),
-          (k.async = 1),
-          (k.src = r),
-          a.parentNode.insertBefore(k, a);
-      })(
-        window,
-        document,
-        "script",
-        "https://mc.yandex.ru/metrika/tag.js?id=103887739",
-        "ym"
-      );
-      ym(103887739, "init", {
-        ssr: true,
-        clickmap: true,
-        accurateTrackBounce: true,
-        trackLinks: true,
-      });
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Максим Ситников — Fullstack .NET Developer | DevOps | yellow444</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Максим Ситников — Fullstack .NET/Python разработчик и DevOps-инженер. Kubernetes, CI/CD, микросервисы. 7+ лет опыта. Портфолио, проекты и статьи." />
+    <meta name="keywords" content=".NET, C#, Python, Kubernetes, CI/CD, SQL, Docker, DevOps, Fullstack, микросервисы, ASP.NET Core" />
+    <meta name="author" content="Максим Ситников" />
+    <link rel="canonical" href="https://yellow444.github.io/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Максим Ситников — Fullstack .NET Developer | DevOps" />
+    <meta property="og:description" content="Fullstack .NET/Python разработчик и DevOps-инженер. Kubernetes, CI/CD, микросервисы. 7+ лет опыта." />
+    <meta property="og:image" content="https://yellow444.github.io/images/maksim.png" />
+    <meta property="og:url" content="https://yellow444.github.io/" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Максим Ситников — Fullstack .NET Developer" />
+    <meta name="twitter:description" content="Портфолио .NET/Python разработчика и DevOps-инженера" />
+    <meta name="twitter:image" content="https://yellow444.github.io/images/maksim.png" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#1e2a47" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Максим Ситников",
+      "alternateName": "yellow444",
+      "url": "https://yellow444.github.io",
+      "image": "https://yellow444.github.io/images/maksim.png",
+      "jobTitle": "Fullstack Developer / DevOps Engineer",
+      "knowsAbout": [".NET", "C#", "Python", "Kubernetes", "Docker", "CI/CD", "PostgreSQL", "ASP.NET Core", "Kafka", "RabbitMQ"],
+      "sameAs": [
+        "https://github.com/yellow444",
+        "https://t.me/magnMaks",
+        "https://habr.com/ru/users/maksim_sitnikov/"
+      ]
+    }
     </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Analytics (async) -->
+    <script src="./scripts/analytics.js" defer></script>
     <noscript>
       <div>
         <img
@@ -43,18 +66,6 @@
         />
       </div>
     </noscript>
-    <!-- /Yandex.Metrika counter -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Краткое описание портфолио и ключевых навыков" />
-    <meta name="keywords" content=".NET, C#, Python, Kubernetes, CI/CD, SQL" />
-    <meta property="og:title" content="Максим Ситников — yellow444" />
-    <meta property="og:description" content="Краткое описание портфолио и ключевых навыков" />
-    <meta property="og:image" content="https://yellow444.github.io/images/maksim.png" />
-    <meta property="og:url" content="https://yellow444.github.io" />
-    <title>Максим Ситников — yellow444</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- Навигационная панель -->
@@ -64,15 +75,18 @@
         <div class="logo-container">
           <div class="logo-placeholder">
             <!-- Кликабельное фото с превью -->
-            <img
-              id="previewImg"
-              alt="Фото Максима Ситникова"
-              src="images/maksim.png"
-              width="512"
-              height="512"
-              class="logo-image logo-image--clickable"
-              decoding="async"
-            />
+            <picture>
+              <source srcset="images/maksim.webp" type="image/webp" />
+              <img
+                id="previewImg"
+                alt="Фото Максима Ситникова"
+                src="images/maksim.png"
+                width="256"
+                height="256"
+                class="logo-image logo-image--clickable"
+                decoding="async"
+              />
+            </picture>
             <a href="/#hero" class="logo-link" tooltip="Перейти к контактам"><h1 class="logo">Maksim<br/>Sitnikov</h1></a>
             <a href="/#hero" class="logo-link" aria-label="GitHub avatar">
               <img
@@ -91,19 +105,19 @@
         <!-- МЕНЮ -->
         <div id="menu-placeholder"></div>
 
-        <!-- КОНТАКТЫ СПРАВА -->
+        <!-- КОНТАКТЫ СПРАВА (обфусцированы от спам-ботов) -->
         <div class="header-contacts" aria-label="Контакты">
-          <a class="contact-chip" href="tel:+79099946571" aria-label="Позвонить">
+          <a class="contact-chip" data-contact="dGVsOis3OTA5OTk0NjU3MQ==" data-label="Kzc5MDk5OTQ2NTcx" aria-label="Позвонить" href="#">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.36 11.36 0 003.56.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h2.5a1 1 0 011 1 11.36 11.36 0 00.57 3.56 1 1 0 01-.24 1.02l-2.2 2.2z"/>
             </svg>
-            <span>+7 909 994-65-71</span>
+            <span class="contact-text">Телефон</span>
           </a>
-          <a class="contact-chip" href="mailto:yellow444@gmail.com" aria-label="Написать Email">
+          <a class="contact-chip" data-contact="bWFpbHRvOnllbGxvdzQ0NEBnbWFpbC5jb20=" data-label="eWVsbG93NDQ0QGdtYWlsLmNvbQ==" aria-label="Написать Email" href="#">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
             </svg>
-            <span>yellow444@gmail.com</span>
+            <span class="contact-text">Email</span>
           </a>
           <a class="contact-chip" href="https://t.me/magnMaks" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
             <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -287,7 +301,10 @@
           <div class="project-card">
             <a href="https://t.me/todo123456789bot"><h3>ToDoTelegramBot</h3></a>
             <div class="project-img">
-              <img src="images/ToDoTelegramBotOnInlineKeyboardButton.gif" alt="ToDoTelegramBot" />
+              <picture>
+                <source srcset="images/ToDoTelegramBotOnInlineKeyboardButton.webp" type="image/webp" />
+                <img src="images/ToDoTelegramBotOnInlineKeyboardButton.gif" alt="ToDoTelegramBot" loading="lazy" decoding="async" />
+              </picture>
             </div>
             <p>Телеграм-бот с календарем на InlineKeyboardButton для управления задачами.</p>
             <p class="project-meta">
@@ -306,19 +323,39 @@
         <div class="experience-list">
           <div class="experience-item">
             <h3>ООО «Сбербанк-Телеком» — .NET-разработчик <span class="years">2024–2025</span></h3>
-            <p>Системы AntiFraud.</p>
+            <p>Разработка и поддержка AntiFraud-системы для телеком-направления Сбера.</p>
+            <ul class="experience-details">
+              <li>Спроектировал event-driven модуль обработки подозрительных транзакций на .NET 8 + Kafka</li>
+              <li>Внедрил мониторинг с Prometheus/Grafana для отслеживания SLA сервисов</li>
+              <li>Стек: .NET 8, Kafka, PostgreSQL, Kubernetes, GitLab CI/CD</li>
+            </ul>
           </div>
           <div class="experience-item">
             <h3>ООО «Исполком» — Fullstack-разработчик <span class="years">2022–2025</span></h3>
-            <p>LegalTech-платформы, консалтинг, управленческий учёт.</p>
+            <p>LegalTech-платформа: консалтинг, управленческий учёт, интеграции с гос. сервисами.</p>
+            <ul class="experience-details">
+              <li>Разработал интеграцию с API Госуслуг (PyCades), автоматизировав подачу заявлений с ЭЦП</li>
+              <li>Построил микросервисную архитектуру на ASP.NET Core + RabbitMQ, сократив время деплоя через CI/CD</li>
+              <li>Стек: .NET 6/8, Python, React, PostgreSQL, Docker, Kubernetes, Helm</li>
+            </ul>
           </div>
           <div class="experience-item">
             <h3>Московская Коллегия Адвокатов — .NET-разработчик <span class="years">2020–2022</span></h3>
-            <p>LegalTech. Автоматизация и оптимизация юридической работы.</p>
+            <p>LegalTech: автоматизация документооборота и юридической работы.</p>
+            <ul class="experience-details">
+              <li>Автоматизировал формирование юридических документов — снизил ручную работу</li>
+              <li>Внедрил OLAP-аналитику (MS Analysis Services) для управленческой отчётности</li>
+              <li>Стек: ASP.NET MVC, MS SQL Server, SSRS, Entity Framework, TFS</li>
+            </ul>
           </div>
           <div class="experience-item">
             <h3>ООО «ТБТБ» — Fullstack-разработчик <span class="years">2018–2020</span></h3>
-            <p>Проекты на заказ, общение с заказчиками и быстрые прототипы.</p>
+            <p>Заказная разработка: веб-приложения, прототипирование, работа с клиентами.</p>
+            <ul class="experience-details">
+              <li>Разрабатывал веб-приложения от идеи до деплоя: backend + frontend + настройка серверов</li>
+              <li>Реализовал Telegram-бот для управления задачами (Python, InlineKeyboard)</li>
+              <li>Стек: C#, ASP.NET, JavaScript, Python, MS SQL Server, IIS</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -329,20 +366,32 @@
       <div class="container">
         <h2>Сертификаты</h2>
         <div class="certificates">
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img src="images/skill-c-sharp.png" alt="C# certificate" />
+          <div class="cert-item">
+            <picture>
+              <source srcset="images/skill-c-sharp.webp" type="image/webp" />
+              <img src="images/skill-c-sharp.png" alt="C# certificate" loading="lazy" decoding="async" />
+            </picture>
             <a href="https://www.sololearn.com/certificates/CT-XBOZ6PJW" target="_blank" rel="noopener noreferrer">C#</a>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img src="images/skill-JavaScript.png" alt="JavaScript certificate" />
+          <div class="cert-item">
+            <picture>
+              <source srcset="images/skill-JavaScript.webp" type="image/webp" />
+              <img src="images/skill-JavaScript.png" alt="JavaScript certificate" loading="lazy" decoding="async" />
+            </picture>
             <a href="https://www.sololearn.com/certificates/CT-FANMITW9" target="_blank" rel="noopener noreferrer">JavaScript</a>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img src="images/skill-python-core.png" alt="Python Core certificate" />
+          <div class="cert-item">
+            <picture>
+              <source srcset="images/skill-python-core.webp" type="image/webp" />
+              <img src="images/skill-python-core.png" alt="Python Core certificate" loading="lazy" decoding="async" />
+            </picture>
             <a href="https://www.sololearn.com/certificates/CT-2QK4AYGB" target="_blank" rel="noopener noreferrer">Python Core</a>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img src="images/skill-SQL.png" alt="SQL" />
+          <div class="cert-item">
+            <picture>
+              <source srcset="images/skill-SQL.webp" type="image/webp" />
+              <img src="images/skill-SQL.png" alt="SQL certificate" loading="lazy" decoding="async" />
+            </picture>
             <a href="https://www.sololearn.com/certificates/CT-1Q7DENXP" target="_blank" rel="noopener noreferrer">SQL</a>
           </div>
         </div>
@@ -354,11 +403,17 @@
       <div class="container">
         <h2>Hackathon Certificates</h2>
         <div class="hack-block">
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img src="images/hack-certificate-2020.png" alt="Hackathon certificate" />
+          <div class="cert-item">
+            <picture>
+              <source srcset="images/hack-certificate-2020.webp" type="image/webp" />
+              <img src="images/hack-certificate-2020.png" alt="Hackathon certificate 2020" loading="lazy" decoding="async" />
+            </picture>
           </div>
-          <div style="display: flex; flex-direction: column; align-items: center">
-            <img src="images/hack-certificate-2021.png" alt="Hackathon certificate" />
+          <div class="cert-item">
+            <picture>
+              <source srcset="images/hack-certificate-2021.webp" type="image/webp" />
+              <img src="images/hack-certificate-2021.png" alt="Hackathon certificate 2021" loading="lazy" decoding="async" />
+            </picture>
           </div>
         </div>
       </div>
@@ -1667,234 +1722,35 @@
         </details>
       </div>
     </section>
+    <!-- CTA-секция -->
+    <section id="contact" class="section cta-section" role="region" aria-label="Связаться">
+      <div class="container cta-container">
+        <h2>Открыт к сотрудничеству</h2>
+        <p>Ищу интересные проекты в области .NET, DevOps и микросервисной архитектуры. Готов обсудить как штатные позиции, так и проектную работу.</p>
+        <div class="cta-buttons">
+          <a class="cta-btn cta-btn--primary" href="https://t.me/magnMaks" target="_blank" rel="noopener noreferrer">
+            Написать в Telegram
+          </a>
+          <a class="cta-btn cta-btn--secondary" href="https://github.com/yellow444" target="_blank" rel="noopener noreferrer">
+            Смотреть GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 Максим Ситников. Исходный код на <a href="https://github.com/yellow444/yellow444.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </div>
+    </footer>
+
     <!-- Плавающая кнопка «Наверх» -->
     <a href="#top" id="backToTopBtn" class="floating-btn" aria-label="Наверх">↑ Наверх</a>
 
-    <!-- Подключение меню (если у вас был внешний фрагмент) -->
-    <script>
-      (async function injectMenu() {
-        try {
-          const resp = await fetch('./partials/menu.html', { cache: 'no-cache' });
-          if (!resp.ok) return;
-          const html = await resp.text();
-          const container = document.getElementById('menu-placeholder');
-          if (!container) return;
-          container.innerHTML = html;
-          const ev = new Event('menuLoaded');
-          document.dispatchEvent(ev);
-        } catch {}
-      })();
-    </script>
-
-    <!-- Скрипты: бургер + «Наверх» + превью изображений + тень при скролле -->
-    <script>
-      // После загрузки меню (из menu.html)
-      document.addEventListener("menuLoaded", () => {
-        const toggle = document.getElementById("menuToggle");
-        const nav = document.getElementById("mainNav");
-        if (toggle && nav) {
-          toggle.addEventListener("click", () => {
-            const isOpen = nav.classList.toggle("open");
-            toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-            document.body.classList.toggle("no-scroll-nav", isOpen);
-          });
-          nav.addEventListener("click", (e) => {
-            if (e.target.tagName === "A" && nav.classList.contains("open")) {
-              nav.classList.remove("open");
-              toggle.setAttribute("aria-expanded", "false");
-              document.body.classList.remove("no-scroll-nav");
-            }
-          });
-        }
-      });
-
-      // Кнопка «Наверх»
-      (function () {
-        const btn = document.getElementById("backToTopBtn");
-        window.addEventListener("scroll", function () {
-          btn.style.display = window.scrollY > 50 ? "block" : "none";
-        });
-        btn.style.display = "none";
-        btn.addEventListener("click", function (e) {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      })();
-
-      // Модальное превью изображений (аватар/сертификаты)
-      (function () {
-        const modal = document.getElementById("imgModal");
-        const modalImg = document.getElementById("modalImg");
-        const closeBtn = document.getElementById("modalClose");
-
-        function openModalWithSrc(src) {
-          modal.style.display = "block";
-          modal.setAttribute("aria-hidden", "false");
-          modalImg.src = src;
-          document.body.classList.add("no-scroll");
-          closeBtn.focus();
-        }
-        function closeModal() {
-          modal.style.display = "none";
-          modal.setAttribute("aria-hidden", "true");
-          modalImg.removeAttribute("src");
-          document.body.classList.remove("no-scroll");
-        }
-
-        modalImg.addEventListener("click", closeModal);
-
-        const previewImg = document.getElementById("previewImg");
-        if (previewImg) {
-          previewImg.classList.add("logo-image--clickable");
-          previewImg.addEventListener("click", () => openModalWithSrc(previewImg.src));
-        }
-
-        document.querySelectorAll(".certificates img, .hack-block img").forEach((img) => {
-          img.style.cursor = "zoom-in";
-          img.addEventListener("click", () => openModalWithSrc(img.src));
-        });
-
-        document.getElementById("modalClose").addEventListener("click", closeModal);
-        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
-        modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-      })();
-
-      // Тень у шапки при скролле
-      (function () {
-        const header = document.querySelector(".site-header");
-        const onScroll = () => {
-          if (window.scrollY > 4) header.classList.add("scrolled");
-          else header.classList.remove("scrolled");
-        };
-        onScroll();
-        window.addEventListener("scroll", onScroll, { passive: true });
-      })();
-    </script>
-
-    <!-- ======= OpenGraph Превью для «Статьи» (клиентская реализация, без ключей) ======= -->
-    <script>
-      (function OGPreview() {
-        /** Утилиты **/
-        const abs = (url) => {
-          const a = document.createElement('a'); a.href = url; return a.href;
-        };
-        const text = (s, n=180) => (s || '').replace(/\s+/g,' ').trim().slice(0, n);
-
-        /** Парсинг OG из HTML-текста. Без DOMParser (он здесь тоже можно, но мы берём проще/надёжнее) */
-        function extractOG(html, pageUrl) {
-          const get = (prop) => {
-            const re = new RegExp(`<meta[^>]+property=["']${prop}["'][^>]+content=["']([^"']+)["']`, 'i');
-            const m = html.match(re);
-            return m ? m[1] : '';
-          };
-          const og = {
-            title: get('og:title') || '',
-            desc:  get('og:description') || '',
-            img:   get('og:image') || '',
-            site:  get('og:site_name') || '',
-            url:   get('og:url') || pageUrl
-          };
-          // Канонические / твиттер-резервы
-          if (!og.title) {
-            const m = html.match(/<title[^>]*>([^<]+)<\/title>/i);
-            og.title = m ? m[1] : '';
-          }
-          if (!og.desc) {
-            const m = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i);
-            og.desc = m ? m[1] : '';
-          }
-          if (!og.img) {
-            const m = html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i);
-            og.img = m ? m[1] : '';
-          }
-          // Абсолютные URL
-          og.url = abs(og.url || pageUrl);
-          if (og.img && !/^https?:\/\//i.test(og.img)) {
-            try {
-              const u = new URL(og.url);
-              og.img = `${u.protocol}//${u.host}${og.img.startsWith('/') ? og.img : '/'+og.img}`;
-            } catch {}
-          }
-          if (!og.site) {
-            try { og.site = new URL(og.url).host.replace(/^www\./,''); } catch {}
-          }
-          og.title = text(og.title, 160);
-          og.desc  = text(og.desc, 220);
-          return og;
-        }
-
-        /** Рендер карточки внутрь .og-card */
-        function renderCard(box, og) {
-          const hasImage = !!og.img;
-          box.innerHTML = `
-            <a class="og-link" href="${og.url}" target="_blank" rel="noopener noreferrer" aria-label="${og.title}">
-              ${hasImage ? `<div class="og-thumb"><img src="${og.img}" alt="" loading="lazy" decoding="async"></div>` : ''}
-              <div class="og-body ${hasImage ? '' : 'og-body--noimg'}">
-                <div class="og-title">${og.title || 'Ссылка'}</div>
-                ${og.desc ? `<div class="og-desc">${og.desc}</div>` : ''}
-                <div class="og-site">${og.site || (new URL(og.url).host)}</div>
-              </div>
-            </a>
-          `;
-          box.hidden = false;
-        }
-
-        /** Загрузка HTML через публичный кэширующий прокси с CORS (без API-ключей) */
-        async function loadHtmlThroughProxy(url) {
-          // r.jina.ai поддерживает CORS и быстро отдаёт текст страницы
-          const proxyUrl = `https://r.jina.ai/http://${url.replace(/^https?:\/\//,'')}`;
-          const resp = await fetch(proxyUrl, { mode: 'cors', cache: 'force-cache' });
-          if (!resp.ok) throw new Error('Bad status: ' + resp.status);
-          return await resp.text();
-        }
-
-        /** Обработка всех статей */
-        async function enhanceArticles() {
-          const items = document.querySelectorAll('#articles .article-item');
-          for (const item of items) {
-            try {
-              const a = item.querySelector('h3 a');
-              const box = item.querySelector('.og-card');
-              if (!a || !box) continue;
-              const url = a.href;
-
-              // 1) Пытаемся получить OG
-              let html = '';
-              try {
-                html = await loadHtmlThroughProxy(url);
-              } catch (e) {
-                // Фолбэк без прокси (вдруг у ссылки уже стоят CORS-заголовки)
-                try {
-                  const r = await fetch(url, { mode: 'cors' });
-                  if (r.ok) html = await r.text();
-                } catch {}
-              }
-
-              if (html) {
-                const og = extractOG(html, url);
-                // Если метаданные совсем пустые — делаем минимальную карточку
-                if (!og.title && !og.desc && !og.img) {
-                  renderCard(box, { url, title: a.textContent.trim(), desc: '', img: '', site: new URL(url).host });
-                } else {
-                  renderCard(box, og);
-                }
-              } else {
-                // Фолбэк: домен/заголовок
-                renderCard(box, { url, title: a.textContent.trim(), desc: '', img: '', site: new URL(url).host });
-              }
-            } catch (e) {
-              // Мягко деградируем: ничего не ломаем
-              // console.debug('OG preview error:', e);
-            }
-          }
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', enhanceArticles, { once: true });
-        } else {
-          enhanceArticles();
-        }
-      })();
-    </script>
+    <!-- Скрипты (вынесены в отдельные файлы для кеширования) -->
+    <script src="./scripts/loadMenu.js" defer></script>
+    <script src="./scripts/ui.js" defer></script>
+    <script src="./scripts/og-preview.js" defer></script>
   </body>
 </html>
