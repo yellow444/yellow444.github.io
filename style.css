@@ -207,6 +207,32 @@ body.no-scroll-nav {
   fill: currentColor;
 }
 
+/* Переключатель языка */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: #fff;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: .4rem;
+  text-decoration: none;
+  transition: background .15s, border-color .15s, transform .12s;
+  cursor: pointer;
+}
+
+.lang-switch:hover {
+  background: rgba(255, 255, 255, .2);
+  border-color: rgba(255, 255, 255, .35);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
 /* ===== ГЕРОЙ ===== */
 .hero {
   position: relative;
