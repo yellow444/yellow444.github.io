@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Article Title</title>
+    <meta name="author" content="Maksim Sitnikov" />
+    <meta name="theme-color" content="#1e2a47" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico" sizes="48x48" />
+    <link rel="icon" href="../../images/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../style.css" />
+
+    <style>
+      /* === Article content styles === */
+      #article-content {
+        padding: 2rem 0 1rem;
+      }
+
+      #article-content h1 {
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 1.2rem;
+        line-height: 1.3;
+      }
+
+      #article-content h2 {
+        font-size: clamp(1.15rem, 2.4vw, 1.55rem);
+        font-weight: 700;
+        color: var(--text);
+        margin: 2rem 0 .8rem;
+        line-height: 1.35;
+      }
+
+      #article-content h3 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: var(--text);
+        margin: 1.5rem 0 .6rem;
+      }
+
+      #article-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: var(--text);
+        margin-bottom: 1rem;
+      }
+
+      #article-content ul,
+      #article-content ol {
+        margin: .6rem 0 1rem 1.4rem;
+        padding: 0;
+        color: var(--text);
+      }
+
+      #article-content li {
+        font-size: 1.02rem;
+        line-height: 1.65;
+        margin-bottom: .35rem;
+      }
+
+      #article-content code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: .92em;
+        background: #edf1f7;
+        color: #c7254e;
+        padding: .15em .4em;
+        border-radius: .3rem;
+      }
+
+      #article-content pre {
+        background: #1e2a47;
+        color: #e0e4ed;
+        padding: 1.2rem 1.4rem;
+        border-radius: .6rem;
+        overflow-x: auto;
+        font-size: .92rem;
+        line-height: 1.55;
+        margin: 1rem 0 1.2rem;
+      }
+
+      #article-content pre code {
+        background: none;
+        color: inherit;
+        padding: 0;
+        font-size: inherit;
+      }
+
+      #article-content a {
+        color: var(--brand);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+
+      #article-content a:hover {
+        color: var(--brand-soft);
+      }
+
+      #article-content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: .5rem;
+        margin: 1rem 0;
+      }
+
+      #article-content strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      #article-content blockquote {
+        border-left: 4px solid var(--brand);
+        margin: 1rem 0;
+        padding: .6rem 1rem;
+        background: rgba(25, 103, 210, .06);
+        border-radius: 0 .4rem .4rem 0;
+        color: var(--text);
+      }
+
+      /* Dark theme — article content */
+      @media (prefers-color-scheme: dark) {
+        #article-content code {
+          background: #253350;
+          color: #f7a8b8;
+        }
+
+        #article-content pre {
+          background: #0b1222;
+          color: #d0d6e0;
+        }
+
+        #article-content blockquote {
+          background: rgba(92, 184, 255, .08);
+          border-left-color: var(--brand);
+        }
+      }
+
+      /* Contact section in articles */
+      .article-contacts {
+        background: var(--bg);
+      }
+
+      .article-contacts h2 {
+        color: var(--text);
+      }
+
+      .contact-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .8rem 2rem;
+      }
+
+      .contact-list li {
+        font-size: 1rem;
+        color: var(--text);
+      }
+
+      .contact-list a {
+        color: var(--brand);
+        text-decoration: none;
+      }
+
+      .contact-list a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
+    <!-- Analytics (async) -->
+    <script src="../../scripts/analytics.js" defer></script>
+    <noscript>
+      <div>
+        <img
+          src="https://mc.yandex.ru/watch/103887739"
+          style="position: absolute; left: -9999px"
+          alt=""
+        />
+      </div>
+    </noscript>
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header id="top" class="site-header" role="banner">
+      <div class="container header-grid">
+        <div class="logo-container">
+          <div class="logo-placeholder">
+            <picture>
+              <source srcset="../../images/maksim.webp" type="image/webp" />
+              <img
+                id="previewImg"
+                alt="Photo of Maksim Sitnikov"
+                src="../../images/maksim.png"
+                width="256"
+                height="256"
+                class="logo-image logo-image--clickable"
+                decoding="async"
+              />
+            </picture>
+            <a href="/en/" class="logo-link" tooltip="Go to home"><h1 class="logo">Maksim<br/>Sitnikov</h1></a>
+            <a href="https://github.com/yellow444/" class="logo-link" aria-label="GitHub avatar">
+              <img
+                alt="GitHub avatar"
+                src="https://avatars.githubusercontent.com/u/4164963?v=4"
+                width="460"
+                height="460"
+                class="logo-image"
+                decoding="async"
+                loading="lazy"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Burger menu -->
+        <button
+          id="menuToggle"
+          class="burger"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span><span></span><span></span>
+        </button>
+
+        <div id="menu-placeholder"></div>
+      </div>
+    </header>
+
+    <!-- Image preview modal -->
+    <div
+      id="imgModal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Image preview"
+    >
+      <button class="close" id="modalClose" aria-label="Close">
+        &times;
+      </button>
+      <img class="modal-content" id="modalImg" alt="Image preview" />
+    </div>
+
+    <!-- Article content -->
+    <section class="section">
+      <div class="container">
+        <div id="article-content"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="section cta-section" role="region" aria-label="Contact">
+      <div class="container cta-container">
+        <h2>Get in Touch</h2>
+        <p>Open to discussing projects in .NET, DevOps, and microservices architecture.</p>
+        <div class="cta-buttons">
+          <a class="cta-btn cta-btn--primary" href="https://t.me/magnMaks" target="_blank" rel="noopener noreferrer">
+            Message on Telegram
+          </a>
+          <a class="cta-btn cta-btn--secondary" href="https://github.com/yellow444" target="_blank" rel="noopener noreferrer">
+            View GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 Maksim Sitnikov. Source code on <a href="https://github.com/yellow444/yellow444.github.io" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+      </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#top" id="backToTopBtn" class="floating-btn" aria-label="Back to top">&uarr; Top</a>
+
+    <!-- Scripts -->
+    <script src="../../scripts/loadMenu-en.js" defer></script>
+    <script src="../../scripts/ui-en.js" defer></script>
+
+    <script>
+      // Load article content
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var content = params.get("content");
+        if (content) {
+          // Sanitize: only allow alphanumeric, underscores, hyphens
+          if (!/^[a-zA-Z0-9_-]+$/.test(content)) return;
+          // Load content from the main articles directory
+          fetch("../../articles/" + content + "_content.html")
+            .then(function (r) {
+              if (!r.ok) throw new Error(r.status);
+              return r.text();
+            })
+            .then(function (html) {
+              document.getElementById("article-content").innerHTML = html;
+              var h1 = document.querySelector("#article-content h1");
+              if (h1) document.title = h1.textContent + " — Maksim Sitnikov";
+            })
+            .catch(function () {
+              document.getElementById("article-content").innerHTML =
+                '<p style="text-align:center;padding:3rem 0;color:var(--text);">Article not found.</p>';
+            });
+        }
+      })();
+    </script>
+  </body>
+</html>
