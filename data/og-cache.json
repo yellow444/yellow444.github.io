@@ -2,14 +2,14 @@
   "https://habr.com/ru/articles/793028": {
     "title": "Легкий путь к власти: тестируем API Госуслуг с PyCades без головной боли",
     "desc": "Опыт создания сервиса для подачи заявлений через API Госуслуг с использованием PyCades для электронной подписи документов.",
-    "img": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/b22/e91/5ee/b22e915ee82e494bd4edca4b14e0fed3.png",
+    "img": "./images/og/og-pycades.webp",
     "site": "habr.com",
     "url": "https://habr.com/ru/articles/793028"
   },
   "https://habr.com/ru/articles/810577": {
     "title": "Решение проблемы дымки на изображениях с использованием .NET",
     "desc": "Простой и эффективный подход к улучшению качества изображений для последующего анализа и обработки с помощью .NET.",
-    "img": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/f24/9c6/1d7/f249c61d76daff6e8e3a64fd11c8b08f.png",
+    "img": "./images/og/og-dehaze.webp",
     "site": "habr.com",
     "url": "https://habr.com/ru/articles/810577"
   }
