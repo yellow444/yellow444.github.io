@@ -6,8 +6,8 @@
     <title>Максим Ситников — Fullstack .NET Developer | DevOps | yellow444</title>
 
     <!-- SEO -->
-    <meta name="description" content="Максим Ситников — Fullstack .NET/Python разработчик и DevOps-инженер. Kubernetes, CI/CD, микросервисы. 7+ лет опыта. Портфолио, проекты и статьи." />
-    <meta name="keywords" content=".NET, C#, Python, Kubernetes, CI/CD, SQL, Docker, DevOps, Fullstack, микросервисы, ASP.NET Core" />
+    <meta name="description" content="Максим Ситников — Fullstack .NET/Python разработчик и DevOps-инженер и тимлид. .NET 8, React, Kubernetes, CI/CD, микросервисы, ETL/OLAP. 8+ лет опыта. Портфолио, проекты и статьи." />
+    <meta name="keywords" content=".NET, C#, ASP.NET Core, React, Python, SQL, Kubernetes, Docker, CI/CD, DevOps, Fullstack, микросервисы, ETL, OLAP, Airflow, Kafka, тимлид" />
     <meta name="author" content="Максим Ситников" />
     <link rel="canonical" href="https://yellow444.github.io/" />
     <link rel="alternate" hreflang="ru" href="https://yellow444.github.io/" />
@@ -16,7 +16,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Максим Ситников — Fullstack .NET Developer | DevOps" />
-    <meta property="og:description" content="Fullstack .NET/Python разработчик и DevOps-инженер. Kubernetes, CI/CD, микросервисы. 7+ лет опыта." />
+    <meta property="og:description" content="Fullstack .NET/Python разработчик и DevOps-инженер. .NET 8, Kubernetes, CI/CD, микросервисы. 8+ лет опыта." />
     <meta property="og:image" content="https://yellow444.github.io/images/maksim.png" />
     <meta property="og:url" content="https://yellow444.github.io/" />
     <meta property="og:locale" content="ru_RU" />
@@ -44,8 +44,12 @@
       "alternateName": "yellow444",
       "url": "https://yellow444.github.io",
       "image": "https://yellow444.github.io/images/maksim.png",
-      "jobTitle": "Fullstack Developer / DevOps Engineer",
-      "knowsAbout": [".NET", "C#", "Python", "Kubernetes", "Docker", "CI/CD", "PostgreSQL", "ASP.NET Core", "Kafka", "RabbitMQ"],
+      "jobTitle": "Fullstack .NET Developer / DevOps Engineer / Team Lead",
+      "knowsAbout": [".NET", "C#", "ASP.NET Core", "React", "TypeScript", "Python", "SQL", "PostgreSQL", "Kubernetes", "Docker", "CI/CD", "Kafka", "RabbitMQ", "ETL", "OLAP", "Apache Airflow"],
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Synergy University, Moscow"},
+        {"@type": "CollegeOrUniversity", "name": "Derzhavin Tambov State University"}
+      ],
       "sameAs": [
         "https://github.com/yellow444",
         "https://t.me/magnMaks",
@@ -165,12 +169,18 @@
         <h2>Обо мне</h2>
         <p>
           Меня зовут <strong><a href="https://github.com/yellow444" target="_blank" rel="noopener noreferrer">Максим Ситников</a></strong>
-          — я fullstack-разработчик и DevOps-инженер из Москвы. В работе использую .NET Core, Python, SQL, Kubernetes, CI/CD, а также RabbitMQ,
-          WebSockets и Node.js. Люблю автоматизировать процессы и делиться опытом на GitHub и Хабре.
+          — fullstack .NET-разработчик, DevOps-инженер и тимлид из Москвы, более 8 лет в коммерческой разработке. Основной стек — C# / .NET 8,
+          ASP.NET Core, React и TypeScript, Python и SQL; в продакшене работаю с Docker, Kubernetes, CI/CD и мониторингом (Prometheus, Grafana).
+          Люблю автоматизировать процессы и делиться опытом на GitHub и Хабре.
         </p>
         <p>
           Среди моих проектов — сервис для подачи заявлений через API Госуслуг, инструменты обработки изображений и библиотеки для работы с
           криптографией. Разрабатываю серверные, веб- и десктопные приложения и веду их от идеи до деплоя.
+        </p>
+        <p>
+          Отдельное направление — данные и аналитика: проектирование и сопровождение хранилищ данных, ETL-процессы и OLAP-отчётность
+          (Apache Airflow, Kafka, RabbitMQ, Pentaho, Apache Superset, MS Analysis Services). Руководил командой разработки, а карьеру начинал
+          системным администратором — поэтому одинаково уверенно чувствую себя и в коде, и в инфраструктуре.
         </p>
         <p>
           Стараюсь писать чистый и проверяемый код, строю надёжные пайплайны и верю в силу автоматизации. В свободное время участвую в хакатонах,
@@ -317,12 +327,14 @@
             </ul>
           </div>
           <div class="experience-item">
-            <h3>ООО «Исполком» — Fullstack-разработчик <span class="years">2022–2025</span></h3>
+            <h3>ООО «Исполком» — Fullstack-разработчик / тимлид <span class="years">2022–2025</span></h3>
             <p>LegalTech-платформа: консалтинг, управленческий учёт, интеграции с гос. сервисами.</p>
             <ul class="experience-details">
               <li>Разработал интеграцию с API Госуслуг (PyCades), автоматизировав подачу заявлений с ЭЦП</li>
               <li>Построил микросервисную архитектуру на ASP.NET Core + RabbitMQ, сократив время деплоя через CI/CD</li>
-              <li>Стек: .NET 6/8, Python, React, PostgreSQL, Docker, Kubernetes, Helm</li>
+              <li>Руководил командой из 5 человек (разработчики, аналитики): планирование, декомпозиция задач, code review, менторинг</li>
+              <li>Настроил ETL-процессы и OLAP-отчётность для управленческого учёта</li>
+              <li>Стек: .NET 6/8, Python, React, PostgreSQL, Docker, Kubernetes, Helm, Airflow</li>
             </ul>
           </div>
           <div class="experience-item">
@@ -342,6 +354,23 @@
               <li>Реализовал Telegram-бот для управления задачами (Python, InlineKeyboard)</li>
               <li>Стек: C#, ASP.NET, JavaScript, Python, MS SQL Server, IIS</li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Блок «Образование» -->
+    <section id="education" class="section" role="region" aria-label="Образование">
+      <div class="container">
+        <h2>Образование</h2>
+        <div class="experience-list">
+          <div class="experience-item">
+            <h3>Университет «Синергия», Москва <span class="years">2025</span></h3>
+            <p>Высшее. Направление: «Управление информационными технологиями в организации».</p>
+          </div>
+          <div class="experience-item">
+            <h3>Тамбовский государственный университет им. Г.Р. Державина <span class="years">2005</span></h3>
+            <p>Высшее. Квалификация «Экономист», специальность «Бухгалтерский учёт, анализ и аудит».</p>
           </div>
         </div>
       </div>
