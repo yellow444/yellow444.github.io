@@ -47,6 +47,7 @@
       "url": "https://yellow444.github.io/en",
       "image": "https://yellow444.github.io/images/maksim.png",
       "jobTitle": "Fullstack .NET Developer / DevOps Engineer / Team Lead",
+      "worksFor": {"@type": "Organization", "name": "Xpress Super App"},
       "knowsAbout": [".NET", "C#", "ASP.NET Core", "React", "TypeScript", "Python", "SQL", "PostgreSQL", "Kubernetes", "Docker", "CI/CD", "Kafka", "RabbitMQ", "ETL", "OLAP", "Apache Airflow"],
       "alumniOf": [
         {"@type": "CollegeOrUniversity", "name": "Synergy University, Moscow"},
@@ -63,24 +64,17 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="../style.css" />
 
     <!-- Analytics (async) -->
     <script src="../scripts/analytics.js" defer></script>
-    <noscript>
-      <div>
-        <img
-          src="https://mc.yandex.ru/watch/103887739"
-          style="position: absolute; left: -9999px"
-          alt=""
-        />
-      </div>
-    </noscript>
   </head>
   <body>
+    <!-- Yandex.Metrica (noscript) -->
+    <noscript><div><img src="https://mc.yandex.ru/watch/103887739" style="position:absolute; left:-9999px" alt="" /></div></noscript>
     <!-- Navigation Header -->
     <header id="top" class="site-header" role="banner">
       <div class="container header-grid">
@@ -172,7 +166,7 @@
           My name is <strong><a href="https://github.com/yellow444" target="_blank" rel="noopener noreferrer">Maksim Sitnikov</a></strong>
           — a fullstack .NET developer, DevOps engineer and team lead from Moscow with 8+ years of commercial development. My core stack is C# / .NET 8,
           ASP.NET Core, React and TypeScript, Python and SQL; in production I work with Docker, Kubernetes, CI/CD and monitoring (Prometheus, Grafana).
-          I love automating processes and sharing knowledge on GitHub and Habr.
+          I love automating processes and sharing knowledge on GitHub and Habr. Currently I work on the backend of the cloud payment system XPay at Xpress Super App.
         </p>
         <p>
           My projects include a service for submitting applications via the State Services API, image processing tools and libraries for cryptography work.
@@ -318,6 +312,16 @@
       <div class="container">
         <h2>Experience</h2>
         <div class="experience-list">
+          <div class="experience-item">
+            <h3>Xpress Super App — Senior Backend Developer (.NET) <span class="years">2025 – present</span></h3>
+            <p>Backend of the cloud payment system XPay on .NET.</p>
+            <ul class="experience-details">
+              <li>Server-side logic and integrations of the payment backend on .NET 8</li>
+              <li>Classic event sourcing on an event store (no Kafka)</li>
+              <li>Some frontend and DevOps as needed</li>
+              <li>Stack: .NET 8, C#, PostgreSQL, Docker, CI/CD</li>
+            </ul>
+          </div>
           <div class="experience-item">
             <h3>Sberbank-Telecom LLC (ООО «Сбербанк-Телеком») — .NET Developer <span class="years">2024–2025</span></h3>
             <p>Development and maintenance of AntiFraud system for Sber's telecom division.</p>
